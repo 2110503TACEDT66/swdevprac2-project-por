@@ -7,7 +7,7 @@ export default function TopMenu(){
         <div className={styles.menucontainer}>
             <Image src={'/img/logo.jpg'} className={styles.logoimg}
             alt = 'logo' width={0} height={0} sizes="100vh"/>
-            <TopMenuItem title = 'HOME' pageRef='/features'/>
+            <TopMenuItem title = 'HOME' pageRef='/'/>
             <TopMenuItem title = 'FEATURES' pageRef='/features'/>
             <TopMenuItem title = 'ABOUT' pageRef='/about'/>
             <TopMenuItem title = 'SERVICES' pageRef='/service'/>
