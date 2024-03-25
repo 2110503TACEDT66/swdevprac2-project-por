@@ -1,6 +1,6 @@
 import Image from "next/image"
 import getCamp from "@/libs/getCamp"
-export default function async CampDetailPage({params}: {params: {cid: string}}) {
+export default async function CampDetailPage({params}: {params: {cid: string}}) {
     const campDetail = await getCamp(params.cid)
 
     /**
@@ -17,8 +17,9 @@ export default function async CampDetailPage({params}: {params: {cid: string}}) 
                 alt='Camp picture'
                 width={0} height={0} sizes="100vw"
                 className='rounded-lg w-[30%] bg-black'/>
-                <div className='text-md mx-5'>{campDetail.data.description
-                <div>Doors:{campDetail.data.doors}</div>
+                <div className='text-md mx-5'>{campDetail.data.name}
+                <div>address:{campDetail.data.address}</div>
+            </div>
             </div>
         </main>
     )

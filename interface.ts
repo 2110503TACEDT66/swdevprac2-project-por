@@ -4,7 +4,9 @@ interface CampgroundItem {
     address: string,
     tel:string,
     __V:number,
-    
+    id:string,
+    image:string
+
 }
 
 interface CampgroundJson {

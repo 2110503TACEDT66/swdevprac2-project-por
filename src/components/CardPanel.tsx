@@ -4,9 +4,11 @@ import Productcard from "./ProductCard";
 import Link from "next/link";
 import { useRef, useEffect } from "react";
 import getCamps from "@/libs/getCamps";
+
 export default function CardPanel(){
     
-    const[campResponse, setCampResponse] = useState(null)
+    const[campResponse, setCampResponse] = useState<{ data: CampgroundItem[] } | null>(null)
+
     useEffect(()=>{
         const fetchData= async()=>{
             const camps = await getCamps()
@@ -29,13 +31,7 @@ export default function CardPanel(){
         }
     }
     const [compareList, dispatchCompare] = useReducer(compareReducer, new Set<string>())
-    /**
-     * Mock Data for Demonstration Only
-     */
-    /*
-    const mockCampRepo = [{cid:"001", name:"ariel",image:"/img/card.jpg"},
-    {cid:"002", name:"areil1", image:"/img/card.jpg"}]
-    */
+
    if(!campResponse) return (<p>Camp Panel is Loading ...</p>)
     return(
         <div>
@@ -43,9 +39,9 @@ export default function CardPanel(){
             flexDirection:"row", alignContent:"space-around",
         justifyContent:"space-around", flexWrap:"wrap", padding:"10px"}}>
             {
-                mockCampRepo.data.map((campItem)=>(
-                    <Link href={`/camp/${campItem.id}`} className="w-1/5">
-                    <Productcard campName={campItem.name} imgSrc={campItem.image}
+                campResponse.data.map((CampgroundItem)=>(
+                    <Link href={`/camp/${CampgroundItem.id}`} className="w-1/5">
+                    <Productcard campName={CampgroundItem.name} imgSrc={CampgroundItem.image}
                     onCompare={(camp:string)=>dispatchCompare({type:'add', campName:camp})}
                     />
                     </Link>
