@@ -49,7 +49,7 @@ export default function Banner() {
                 <div className='flex flex-col items-center'> {/* Wrapper for second button and text */}
                     <button
                         className={`${styles.circularButton} bg-yellow-600 m-14 my-3 rounded-full z-30 hover:bg-yellow-700`}
-                        onClick={(e) => { e.stopPropagation(); router.push('/reservations'); }}
+                        onClick={(e) => { e.stopPropagation(); router.push('/bookings'); }}
                     >
                         <img src='/img/appointment.png' className={styles.iconimage} alt='Camping Tent' />
                     </button>

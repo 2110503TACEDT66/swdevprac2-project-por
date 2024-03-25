@@ -1,10 +1,10 @@
-import styles from './reservations.module.css'
-import ReservationMenu from '@/app/reservations/ReservationsMenu'
+import styles from './bookings.module.css'
+import BookingMenu from './bookingsMenu'
 
 export default function ReservationLayout({children}:{children:React.ReactNode}){
     return(
         <div className={styles.sectionlayout}>
-            <ReservationMenu/>
+            <BookingMenu/>
             {children}
         </div>
     )

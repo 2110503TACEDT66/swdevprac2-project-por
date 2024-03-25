@@ -1,9 +1,9 @@
 import LocationDateReserve from "@/components/LocationDateReserve"
 
-export default function Reservations(){
+export default function Bookings(){
     return(
         <main className="w-full flex flex-col items-center space-y-4">
-            <div className="text-xl font-medium">New Reservations</div>
+            <div className="text-xl font-medium">New Bookings</div>
             <div className="w-fit space-y-2">
                 <div className="text-md text-left text-gray-600">
                     Pick-Up Date and Location</div>
