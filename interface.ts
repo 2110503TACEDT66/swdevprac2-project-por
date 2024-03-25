@@ -1,12 +1,10 @@
 interface CampgroundItem {
-    _id : string,
     name : string,
     address: string,
     tel:string,
-    __V:number,
-    id:string,
-    image:string
-
+    image:string,
+    __v:number,
+    id:string
 }
 
 interface CampgroundJson {

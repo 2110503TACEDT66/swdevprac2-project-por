@@ -1,20 +1,31 @@
-import { Suspense } from "react";
+'use client'
+import { useState, useEffect, Suspense } from "react";
 import { LinearProgress } from "@mui/material";
 import getCamps from "@/libs/getCamps";
 import CampCatalog from "@/components/CampCatalog";
-import CardPanel from "@/components/CardPanel";
+import styles from './camp.module.css'
 
 export default function Camp(){
-    const camps = getCamps()
+    const [camps, setCamps] = useState(null);
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const campsData = await getCamps();
+                setCamps(campsData);
+            } catch (error) {
+                console.error("Error fetching camps:", error);
+            }
+        }
+        fetchData();
+    }, []);
+
     return(
-        <main className="text-center p-5">
-            <h1 className='text-xl font-medium'> Appointment</h1>
+        <main className={`${styles.head} text-center p-7`}>
+            <h1 className={`text-3xl font-bold`}> Our Campgrounds</h1>
             <Suspense fallback={<p>Loading...<LinearProgress/></p>}>
-            < CampCatalog campgroundsJson={camps}/>
+                {camps && <CampCatalog campgroundsJson={camps} />}
             </Suspense>
-            <hr className="my-10"/>
-            <h1 className='text-xl font-medium'>TRY Client-Side Camp Panel</h1>
-            <CardPanel/>
         </main>
     )
 }

@@ -1,31 +1,24 @@
 import Image from "next/image"
 import getCamp from "@/libs/getCamp"
+import styles from './cid.module.css'
 export default async function CampDetailPage({params}: {params: {cid: string}}) {
     const campDetail = await getCamp(params.cid)
 
-    /**
-     * Mock Data for Demonstration Only
-     */
-    // const mockCampRepo = new Map()
-    // mockCampRepo.set("001",{name:"ariel", image:"/img/card.jpg"})
-    // mockCampRepo.set("002",{name:"ariel1", image:"/img/card.jpg"})
     return(
-        <main className="text-center p-5">
-            <h1 className='text-lg font-medium'>{campDetail.data.model}</h1>
-            <div className="flex flex-row my-5">
-            <Image src={campDetail.data.picture}
+        <main className={`${styles.head} text-center p-5`}>
+            <h1 className='text-xl font-bold'>{campDetail.data.name}</h1>
+            <div className="text-left flex flex-row my-5">
+            <Image src={campDetail.data.image}
                 alt='Camp picture'
                 width={0} height={0} sizes="100vw"
-                className='rounded-lg w-[30%] bg-black'/>
-                <div className='text-md mx-5'>{campDetail.data.name}
-                <div>address:{campDetail.data.address}</div>
+                className='rounded-lg w-[30%] bg-black mx-10'/>
+                <div className='text-lg mx-5'>Name : {campDetail.data.name}
+                <div>Address : {campDetail.data.address}</div>
+                <div>tel : {campDetail.data.tel}</div>
             </div>
             </div>
         </main>
     )
 }
 
-export async function generateStaticParams(){
-    return [{cid:'001'}, {cid:'002'}]
-}
 

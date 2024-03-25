@@ -6,8 +6,10 @@ div.card{
     border-radius: 10px;
     padding-top: 10px;
 }
-div.cardimg{
+
+.cardimg{
     width:100%;
     height:70%;
     position:relative;
+    filter: brightness(80%);
 }
