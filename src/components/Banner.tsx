@@ -1,31 +1,70 @@
 'use client'
-import { useState } from 'react';
-import styles from './banner.module.css'
+import { useState,useEffect } from 'react';
+import styles from './banner.module.css';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
-export default function Banner(){
-    const covers = ['/img/cover4.jpg', '/img/cover5.jpg', '/img/cover6.jpg']
-    const [index, setIndex] = useState(0)
-    const router = useRouter()
+export default function Banner() {
+    const covers = ['/img/cover4.jpg', '/img/cover5.jpg', '/img/cover6.jpg'];
+    const [index, setIndex] = useState(0);
+    const router = useRouter();
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIndex(prevIndex => (prevIndex + 1) % covers.length);
+        }, 6000);
+
+        return () => clearInterval(interval); // Cleanup interval on component unmount
+    }, []);
+
     return (
-        <div className={styles.banner} onClick={()=>{setIndex(index+1)}}>
-            <Image src={covers[index%3]}
-            alt = 'cover'
-            fill ={true}
-            objectFit='cover'/>
-            <div className={styles.bannerText}>
-                <h1 className='text-6xl font-medium'>POR CAMPGROUND</h1>
-                <h3 className='text-xl font-medium'>the biggest campground booking platfrom</h3>
-                <h3 className='text-xl font-italic'>having your best experience with us</h3><br></br><br></br>
+        <div className={styles.banner}>
+            <div className={styles.imageWrapper}>
+                {covers.map((cover, idx) => (
+                    <Image
+                        key={idx}
+                        src={cover}
+                        alt='cover'
+                        fill={true}
+                        className={styles.image}
+                        style={{ opacity: idx === index ? 1 : 0 }} // Show only the current image
+                    />
+                ))}
             </div>
-            <button className='bg-white text-yellow-600 border border-yellow-600 font-semibold py-3 px-3 m-3 rounded z-30 absolute bottom-0 right-0
-                hover:bg-yellow-600 hover:text-white hover:border-transparent'
-                onClick={(e)=> {e.stopPropagation(); router.push('/camp')}}>
-                Booking Campground
-            </button>
-            
+            <div className={`${styles.bannerText} color-white`}>
+                <h1 className='text-6xl font-medium'>POR CAMPGROUND</h1>
+                <h3 className='text-xl font-medium'>the biggest campground booking platform</h3>
+                <h3 className='text-xl font-italic'>having your best experience with us</h3>
+            </div>
+            <div className='flex flex-row justify-center'>
+                <div className='flex flex-col items-center'> {/* Wrapper for first button and text */}
+                    <button
+                        className={`${styles.circularButton} bg-yellow-600 m-14 my-3 rounded-full z-30 hover:bg-yellow-700`}
+                        onClick={(e) => { e.stopPropagation(); router.push('/camp'); }}
+                    >
+                        <img src='/img/camping-tent.png' className={styles.iconimage} alt='Camping Tent' />
+                    </button>
+                    <span className={`${styles.textunderbutton} z-30 text-white`}>Campgrounds</span> {/* Text under the first button */}
+                </div>
+                <div className='flex flex-col items-center'> {/* Wrapper for second button and text */}
+                    <button
+                        className={`${styles.circularButton} bg-yellow-600 m-14 my-3 rounded-full z-30 hover:bg-yellow-700`}
+                        onClick={(e) => { e.stopPropagation(); router.push('/reservations'); }}
+                    >
+                        <img src='/img/appointment.png' className={styles.iconimage} alt='Camping Tent' />
+                    </button>
+                    <span className={`${styles.textunderbutton} z-30 text-white`}>Booking</span> {/* Text under the second button */}
+                </div>
+                <div className='flex flex-col items-center'> {/* Wrapper for third button and text */}
+                    <button
+                        className={`${styles.circularButton} bg-yellow-600 m-14 my-3 rounded-full z-30 hover:bg-yellow-700`}
+                        onClick={(e) => { e.stopPropagation(); router.push('/camp'); }}
+                    >
+                        <img src='/img/contact-us.png' className={styles.iconimage} alt='Camping Tent' />
+                    </button>
+                    <span className={`${styles.textunderbutton} z-30 text-white`}>Contact</span> {/* Text under the third button */}
+                </div>
+            </div>
         </div>
     );
 }
-

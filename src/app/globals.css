@@ -92,6 +92,7 @@ body {
 body {
   color: rgb(var(--foreground-rgb));
   margin-top: 50px;
+  background-color: rgba(233,222,197,255);
 }
 
 a {

@@ -1,5 +1,7 @@
 .banner{
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding:5px;
     margin:0;
     width: 100vw;
@@ -11,4 +13,30 @@
     top:150px;
     z-index: 20;
     text-align: center;
+    color:white;
+    font-family:monospace;
 }
+
+.image{
+    filter: brightness(50%);
+}
+
+.iconimage{
+    height: 40px;
+    width: 40px;
+    filter:invert(100%);
+}
+
+.circularButton {
+    margin-top: 250px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
+
+  .textunderbutton{
+    font-family:monospace;
+  }
+

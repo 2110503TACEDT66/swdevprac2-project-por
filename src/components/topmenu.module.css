@@ -1,24 +1,22 @@
 .menucontainer{
     height: 70px;
-    background-color: white;
+    background-color: rgba(233,222,197,255);
     position: fixed;
     top: 0px;
     left: 0px;
     right: 0px;
     z-index: 30;
-    border-top: 1px solid lightgrey;
-    border-bottom: 1px solid lightgrey;
+    border-top: 1px solid rgba(233,222,197,255);
+    border-bottom: 1px solid rgba(233,222,197,255);
     display: flex;
     flex-direction: row;
+    font-family:monospace;
 }
 
 .logoimg{
-    height: 70%;
-    width: auto;
+    height: 100%;
+    width: 70px;
     margin-left: 20px;
-    margin: auto;
-    margin-left: 20px;
-    
 }
 
 .itemcontainer{
@@ -26,12 +24,12 @@
     text-align: center;
     margin-top: auto;
     margin-bottom: auto;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family:monospace;
     font-size: 10pt;
     color: gray;
     display: flex;
     justify-content: center;
-     hover:text-black;
+    hover:text-black;
 }
 .itemcontainer:hover{
     color:black;
@@ -39,14 +37,13 @@
 
 .button{
     width: 165px;
-    height: 50px;
+    height: 40px;
     margin-top:10px;
     align-items: center;
     display: flex;
     justify-content: center;
     margin: auto;
-    margin-right:30px;
+    margin-right:20px;
     text-align: center;
-    font-family: "Times New Roman", Times, serif;
-    font-style: bold;
+    font-style: italic;
 }
