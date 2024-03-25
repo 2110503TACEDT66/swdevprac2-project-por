@@ -10,7 +10,6 @@ export default function TopMenu(){
             <TopMenuItem title = 'HOME' pageRef='/'/>
             <TopMenuItem title = 'ABOUT' pageRef='/about'/>
             <TopMenuItem title = 'SERVICES' pageRef='/service'/>
-            <TopMenuItem title = 'CONTACT' pageRef='/contact'/>
             <button className={`${styles.button} block rounded-md bg-yellow-500 hover:bg-yellow-600 px-6 py-2 shadow-sm text-white`}>
                 Register 
             </button>
