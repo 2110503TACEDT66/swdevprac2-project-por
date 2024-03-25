@@ -1,13 +1,13 @@
 .menucontainer{
     height: 70px;
-    background-color: rgba(233,222,197,255);
+    background-color: rgb(245, 239, 239);
     position: fixed;
     top: 0px;
     left: 0px;
     right: 0px;
     z-index: 30;
-    border-top: 1px solid rgba(233,222,197,255);
-    border-bottom: 1px solid rgba(233,222,197,255);
+    border-top: 1px solid rgb(245, 239, 239);
+    border-bottom: 1px solid rgb(245, 239, 239);
     display: flex;
     flex-direction: row;
     font-family:monospace;
@@ -29,7 +29,6 @@
     color: gray;
     display: flex;
     justify-content: center;
-    hover:text-black;
 }
 .itemcontainer:hover{
     color:black;

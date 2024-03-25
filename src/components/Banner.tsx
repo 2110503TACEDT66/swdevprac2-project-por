@@ -14,7 +14,7 @@ export default function Banner() {
             setIndex(prevIndex => (prevIndex + 1) % covers.length);
         }, 6000);
 
-        return () => clearInterval(interval); // Cleanup interval on component unmount
+        return () => clearInterval(interval);
     }, []);
 
     return (
@@ -27,7 +27,7 @@ export default function Banner() {
                         alt='cover'
                         fill={true}
                         className={styles.image}
-                        style={{ opacity: idx === index ? 1 : 0 }} // Show only the current image
+                        style={{ opacity: idx === index ? 1 : 0 }} 
                     />
                 ))}
             </div>
