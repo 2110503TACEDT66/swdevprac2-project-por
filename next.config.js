@@ -3,7 +3,7 @@ const nextConfig = {
     images:{
         domains:['drive.google.com','www.google.com','tatapi.tourismthailand.org','upload.wikimedia.org',
         "bearfoottheory.com","files.gqthailand.com","www.shutterstock.com","roxburgh.guide",
-        "go.campendium.com"],
+        "go.campendium.com","www.wonderfulpackage.com","i.ytimg.com"],
         
     },
     experimental:{
