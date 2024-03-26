@@ -14,6 +14,7 @@ export default async function TopMenu(){
             <TopMenuItem title = 'HOME' pageRef='/'/>
             <TopMenuItem title = 'ABOUT' pageRef='/about'/>
             <TopMenuItem title = 'SERVICES' pageRef='/service'/>
+            <TopMenuItem title = 'YOUR BOOKING' pageRef='/cart'/>
             {
                 session? <Link href="/api/auth/signout"><div className='flex items-center absolute right-0 h-full px-3'>
                 <button className={`${styles.button} py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-600 bg-stone-300 rounded-2xl hover:bg-stone-400 `}><p className='font-bold'>Sign out</p></button></div></Link>

@@ -4,6 +4,7 @@ import Productcard from "./ProductCard";
 import Link from "next/link";
 import { useRef, useEffect } from "react";
 import getCamps from "@/libs/getCamps";
+import { CampgroundItem,CampgroundJson } from "../../interfaces";
 
 export default function CardPanel(){
     
