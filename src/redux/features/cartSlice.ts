@@ -1,5 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { BookingItem } from "../../../interfaces";
+import dayjs from "dayjs";
 
 type CartState={
     campgroundItems:BookingItem[]
@@ -12,7 +13,7 @@ export const cartSlice = createSlice({
     initialState,
     reducers:{
         addBooking:(state,action:PayloadAction<BookingItem>)=>{
-            state.campgroundItems.push(action.payload)
+            state.campgroundItems.push(action.payload);
         },
         removeBooking:(state,action:PayloadAction<BookingItem>)=>{
             const remainItems=state.campgroundItems.filter(obj=>{
