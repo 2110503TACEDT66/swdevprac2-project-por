@@ -17,7 +17,7 @@ export default async function TopMenu(){
             <TopMenuItem title = 'ABOUT US' pageRef='/about'/>
             <TopMenuItem title = 'SERVICES' pageRef='/service'/>
             {
-                session?<TopMenuItem title = 'YOUR BOOKING' pageRef='/cart'/>:''
+                session?<TopMenuItem title = 'MYBOOKING' pageRef='/cart'/>:''
             }
             {/* {
                 session ? null : <Link href="/api/auth/register"><div className='flex items-center right-3 flex-end h-full px-3'>

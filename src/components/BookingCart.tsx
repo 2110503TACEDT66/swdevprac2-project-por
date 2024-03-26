@@ -10,7 +10,7 @@ export default async function BookingCart(){
     
     return( 
         <>
-        { bookItems.count === 0 ? <div>There are no Booking</div> :
+        { bookItems.count === 0 ? <div className={`${styles.head} bg-stone-200 rounded-xl font-bold text-center px-5 mx-5 py-3 my-3`}>----There are no Booking----</div> :
         bookItems?.data.map( (bookingItem : BookingItem) =>(
             <div className={`${styles.head} bg-stone-200 rounded-xl px-5 mx-5 py-3 my-3`} key={bookingItem._id}>
                 <div className="text-xl font-bold mx-3">Campground: {bookingItem.campground.name} </div>
@@ -21,11 +21,11 @@ export default async function BookingCart(){
                 <div className="flex flex-row space-x-4 " >
 
                 <Link href= {`/cart/edit/${bookingItem._id}`}>
-                    <button className={`${styles.button} block rounded-md bg-blue-500 hover:bg-blue-600 px-3 py-1 text-white text-center shadow-sm`}>Update</button>
+                    <button className={`${styles.button} space-y-5 block rounded-2xl bg-blue-500 hover:bg-blue-600 px-3 py-1 text-white font-bold text-center shadow-sm`}>Update</button>
                 </Link>
 
                 <Link href= {`/cart/delete/${bookingItem._id}`}>
-                    <button className={`${styles.button} block rounded-md bg-blue-500 hover:bg-blue-600 px-3 py-1 text-white text-center shadow-sm`}>Delete</button>
+                    <button className={`${styles.button} space-y-5 block rounded-2xl bg-red-600 hover:bg-red-700 px-3 py-1 text-white font-bold text-center shadow-sm`}>Delete</button>
                 </Link>
                 
                 </div>

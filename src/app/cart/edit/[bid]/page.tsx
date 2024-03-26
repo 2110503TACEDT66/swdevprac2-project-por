@@ -1,6 +1,5 @@
 'use client'
 import Image from "next/image";
-import styles from '../../cart.module.css'
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/redux/store";
 import { useSearchParams } from "next/navigation"
@@ -18,6 +17,7 @@ import getBooking from "@/libs/getBooking";
 import getBookings from "@/libs/getBookings";
 import Link from "next/link";
 import deleteBooking from "@/libs/deleteBooking";
+import styles from './edit.module.css'
 
 
 export default function MyBookingEditPage({params} : {params : {bid:string}}) {
@@ -49,7 +49,7 @@ export default function MyBookingEditPage({params} : {params : {bid:string}}) {
     
              updateBooking(id,checkInDateTime,checkOutDateTime , campground);
             console.log("Edit Booking success");
-            alert('Edit Booking success')
+            alert('Update Booking success')
 
         } catch (error) {
             console.error("Error making booking:", error);
@@ -58,26 +58,26 @@ export default function MyBookingEditPage({params} : {params : {bid:string}}) {
 
 
     return(
-        <main>
-
-            <div className="min-h-screen flex items-center justify-center">
-            <div className="'justify-center items-center h-[500px] w-[400px] p-9 border rounded-lg mx-auto shadow-md shadow-white hover:shadow-2xl hover:shadow-white'">
-                <div className="text-4xl fonts-sans mb-10 mt-3 ">Edit Booking </div>
-                <div className="text-md fonts-sans mb-1 ">Select Check-in Date</div>
-                <div className="">
+        <main className={`${styles.main}`}>
+            <br/>
+            <div className="top-5 flex items-center justify-center">
+            <div className="justify-center items-center h-[600px] w-[400px] p-9 border rounded-2xl mx-auto bg-stone-200 shadow-lg">
+                <div className="text-4xl font-bold mb-8 mt-3 ">Update Booking </div>
+                <div className="text-lg mb-1 ml-6">Select Check In Date</div>
+                <div className="items-left">
                     <LocationDateReserve onDateChange={ (value:Dayjs) =>{
                         setCheckInDate(value) 
                     }} defaultDate={checkInDate} />
                 </div>
-                <div className="text-md fonts-sans mt-6 mb-1 ">Select Check-out Date</div>
+                <div className="text-lg mb-1 ml-6">Select Check Out Date</div>
                 <div>
                     <LocationDateReserve onDateChange={ (value:Dayjs) =>{
                         setCheckOutDate(value)
                     }} defaultDate={checkOutDate} />
                 </div>
-                <div className="text-md fonts-sans mt-6 mb-1 ">Select Campground</div>
-                <div>
-                    <Select variant="standard" name="campground" id="campground" className="h-[2em] w-[200px]" value={campground} onChange={(event) => {setCampground(event.target.value); console.log(campground)}}>
+                <div className="text-lg mb-1 ml-6">Select Campground</div>
+                <div className="ml-6 rounded-xl">
+                    <Select variant="outlined" name="campground" id="campground" className="ml-6 px-6 mt-5 items-center h-[2em] w-[200px]" value={campground} onChange={(event) => {setCampground(event.target.value); console.log(campground)}}>
                     {
                         campgroundItems.map((campgrounditem) => (
                             <MenuItem key={campgrounditem.id} value={campgrounditem.id}> {campgrounditem.name}  </MenuItem>
@@ -85,12 +85,12 @@ export default function MyBookingEditPage({params} : {params : {bid:string}}) {
                     }
                     </Select> 
                 </div>
-
-
+            
+            <div className="mt-6 flex items-center">
             <Link href="/cart">
-            <button name="Book Vaccine" className='text-cyan-800 text-xl font-sans border px-5 py-3 rounded-md hover:bg-cyan-950 hover:shadow-lg hover:shadow-white mt-5 hover:text-white' onClick={editBooking}>Edit Booking</button>   
+            <button name="Update Booking" className={`${styles.button} font-bold text-md mt-5 text-white text-xl px-5 py-3 bg-cyan-800 rounded-2xl hover:bg-cyan-950 hover:shadow-lg hover:shadow-white mt-5 hover:text-white`} onClick={editBooking}>Update Booking</button>   
             </Link>
-
+            </div>
             </div>
             </div>
 
