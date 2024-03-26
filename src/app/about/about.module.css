@@ -1,42 +1,4 @@
-.page {
-    text-align: center;
+.page{
+    font-family: monospace;
+    color: #2f2d2d;
 }
-
-.page h1,
-.page h2,
-.page p {
-    font-family: 'YourFontName', sans-serif; /* เปลี่ยน YourFontName เป็นชื่อฟอนท์ที่คุณต้องการใช้ */
-}
-
-.image-container {
-    display: flex;
-    justify-content: center;
-}
-
-.image-container > div {
-    width: 300px; /* ปรับขนาดของส่วนคำอธิบายตามต้องการ */
-    margin:  100px; /* ระยะห่างระหว่างส่วนคำอธิบาย */
-}
-
-.image-container img {
-    width: auto; /* ปรับขนาดรูปภาพตามต้องการ */
-    height: auto; /* รักษาอัตราส่วนของรูปภาพ */
-    border-radius: 20px; /* กำหนดความโค้งของกรอบรูปภาพ */
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* เงา 3 มิติ */
-}
-
-.caption {
-    max-width: 200px; /* ปรับขนาดของกรอบคำอธิบายตามต้องการ */
-    padding: 10px;
-    background-color: white;
-    border-radius: 20px; /* กำหนดความโค้งของกรอบคำอธิบาย */
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* เงา 3 มิติ */
-}
-
-.team-heading {
-    text-align: center;
-    font-size: 30px; /* ปรับขนาดตัวอักษรใหญ่ขึ้นตามต้องการ */
-    font-weight: bold; /* ทำให้ตัวอักษรหนาขึ้น */
-    margin-bottom: 20px; /* เพิ่มระยะห่างด้านล่างเพื่อปรับเป็นกระแสดีให้กับคำข้างหลัง */
-}
-
