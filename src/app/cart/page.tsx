@@ -3,7 +3,7 @@
 import BookingCart from "@/components/BookingCart"
 export default function CartPage(){
     return(
-        <main>
+        <main className="m-10">
             <BookingCart></BookingCart>
         </main>
     )

@@ -5,9 +5,10 @@
 .button{
     width: 180px;
     height: 40px;
-    display: flex;
+    display:flex;
+    margin-left: 95px;
     justify-content: center;
     align-items: center; 
     font-family:Arial, Helvetica, sans-serif;
-    margin-top: 10px;
+    margin-top: 190px;
 }

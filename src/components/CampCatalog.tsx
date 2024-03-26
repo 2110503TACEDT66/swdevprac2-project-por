@@ -14,7 +14,7 @@ export default async function CampCatalog({ campgroundsJson }: { campgroundsJson
     return chunkedArray;
   };
 
-  const chunkedData = chunkArray(campsJsonReady.data, 3);
+  const chunkedData = chunkArray(campsJsonReady.data, 4);
 
   return (
     <>
