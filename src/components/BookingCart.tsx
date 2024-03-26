@@ -23,15 +23,12 @@ export default async function BookingCart(){
                 <div className="flex flex-row space-x-4 " >
 
                 <Link href= {`/cart/edit/${bookingItem._id}`}>
-                    <button className="block rounded-md bg-blue-500 hover:bg-blue-600 px-3 py-2 text-white shadow-sm">
-                        Update</button>
+                    <button className={`${styles.button} block rounded-md bg-blue-500 hover:bg-blue-600 px-3 py-1 text-white text-center shadow-sm`}>Update</button>
                 </Link>
                 
-
                 
                 <Link href="/cart">
-                <button className="block rounded-md bg-red-600 hover:bg-red-800 px-3 py-2
-                text-white shadow-sm"
+                <button className={`${styles.button} block rounded-md bg-red-600 hover:bg-red-800 px-3 py-1 text-white shadow-sm`}
                 >  
                 Delete </button></Link>
                 {/* เพิ่ม function onClick ตรงปุ่ม onClick={ ()=> { console.log(bookingItem._id); deleteBooking(bookingItem._id)}} */}

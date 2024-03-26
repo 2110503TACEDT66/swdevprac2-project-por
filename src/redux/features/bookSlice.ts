@@ -21,15 +21,18 @@ export const bookSlice = createSlice({
         setBookingReducer: (state, action: PayloadAction<BookingItem[]>) => {
             state.bookItems = action.payload
         },
-        addBooking : (state , action : PayloadAction<BookingItem>) => {
+        addBooking: (state, action: PayloadAction<BookingItem>) => {
+            const { checkInDate, checkOutDate, campground } = action.payload;
+            state.bookItems.push(action.payload);
 
-            state.bookItems.push(action.payload)
-            createBooking(action.payload).then((res) => {
-                getBookings().then((res:BookingJson) => {
-                    store.dispatch(setBookingReducer(res.data))
-                })
-            })
+            const checkInDateTime = new Date(checkInDate);
+            const checkOutDateTime = new Date(checkOutDate);
             
+            createBooking(checkInDateTime, checkOutDateTime, campground.id).then((res) => {
+                getBookings().then((res: BookingJson) => {
+                    store.dispatch(setBookingReducer(res.data));
+                });
+            });
         },
         removeBooking : (state, action:PayloadAction<string>) => {
 
