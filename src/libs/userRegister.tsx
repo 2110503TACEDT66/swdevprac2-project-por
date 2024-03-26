@@ -8,6 +8,7 @@ export default async function userRegister (userName:string,userTel:string, user
             name:userName,
             tel:userTel,
             email:userEmail,
+            role:'user',
             password:userPassword,
         }),
     })

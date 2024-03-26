@@ -13,7 +13,7 @@ export default async function RegisterPage() {
         const role = addUserForm.get("role")as string || "";
 
         const regis = register(name ,tel ,email ,password)
-        redirect("/")
+        redirect("../../../")
     }    
 
     return (
