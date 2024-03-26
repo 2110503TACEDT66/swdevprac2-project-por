@@ -14,7 +14,7 @@ export default async function TopMenu(){
             <Image src={'/img/logo.png'} className={styles.logoimg}
             alt = 'logo' width={0} height={0} sizes="100vh"/>
             <TopMenuItem title = 'HOME' pageRef='/'/>
-            <TopMenuItem title = 'ABOUT' pageRef='/about'/>
+            <TopMenuItem title = 'ABOUT US' pageRef='/about'/>
             <TopMenuItem title = 'SERVICES' pageRef='/service'/>
             {
                 session?<TopMenuItem title = 'YOUR BOOKING' pageRef='/cart'/>:''

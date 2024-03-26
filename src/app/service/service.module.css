@@ -1,4 +1,21 @@
-.page{
-    font-family: monospace;
-    color: #2f2d2d;
+.page {
+    text-align: center; /* จัดให้อยู่ตรงกลาง */
 }
+
+.page h1,
+.page h2,
+.page p {
+    font-family: 'YourFontName', sans-serif; /* เปลี่ยน YourFontName เป็นชื่อฟอนท์ที่คุณต้องการใช้ */
+}
+
+.page h1 {
+    font-size: 2.5rem; /* ปรับขนาดตัวอักษรของหัวเรื่องใหญ่ขึ้น */
+    margin-bottom: 1rem; /* เพิ่มระยะห่างด้านล่างของหัวเรื่อง */
+}
+
+.page p {
+    font-size: 1rem; /* ปรับขนาดตัวอักษรของประโยคทั่วไป */
+    margin-bottom: 1.5rem; /* เพิ่มระยะห่างด้านล่างของประโยค */
+}
+
+

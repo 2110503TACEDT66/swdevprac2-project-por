@@ -13,8 +13,8 @@ export default function Contact() {
                 <p className='px-5'>Forest City, CA 12345</p><br/>
                 
                 <h2 className='px-5 font-bold'>Contact Details</h2>
-                <p className='px-5'>Email: info@porcampground.com</p>
-                <p className='px-5'>Phone: 02-138-321</p>
+                <p className='px-5'>Email: naphatchartwanchai@gmail.com</p>
+                <p className='px-5'>Phone: 061-993-5011</p>
                 
             </div>
         </main>
