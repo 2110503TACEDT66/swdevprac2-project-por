@@ -18,9 +18,9 @@ export default async function CampDetailPage({params}: {params: {cid: string}}) 
                 <div>Address : {campDetail.data.address}</div>
                 <div>tel : {campDetail.data.tel}</div>
                 <Link href={`/bookings?id=${params.cid}&name=${campDetail.data.name}`}>
-                        <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-1 text-white shadow-sm">
-                            Make Reservation
-                        </button>
+                <button className={`${styles.button} py-5 px-5 me-2 mb-2 text-sm font-medium text-gray-600 bg-stone-300 rounded-2xl hover:bg-stone-400 `}>
+                    <p className='font-bold'>Book This Camp</p>
+                </button>
                 </Link>
             </div>
             </div>

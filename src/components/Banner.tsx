@@ -46,16 +46,7 @@ export default function Banner() {
                     >
                         <img src='/img/camping-tent.png' className={styles.iconimage} alt='Camping Tent' />
                     </button>
-                    <span className={`${styles.textunderbutton} z-30 text-white`}>Campgrounds</span>
-                </div>
-                <div className='flex flex-col items-center'>
-                    <button
-                        className={`${styles.circularButton} bg-yellow-600 m-14 my-3 rounded-full z-30 hover:bg-yellow-700`}
-                        onClick={(e) => { e.stopPropagation(); router.push('/bookings'); }}
-                    >
-                        <img src='/img/appointment.png' className={styles.iconimage} alt='Camping Tent' />
-                    </button>
-                    <span className={`${styles.textunderbutton} z-30 text-white`}>Booking</span>
+                    <span className={`${styles.textunderbutton} z-30 text-white`}> Booking Campgrounds</span>
                 </div>
                 <div className='flex flex-col items-center'>
                     <button
