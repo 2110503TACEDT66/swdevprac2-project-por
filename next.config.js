@@ -6,6 +6,9 @@ const nextConfig = {
         "go.campendium.com"],
         
     },
+    experimental:{
+        serverActions:true
+    },
     async headers() {
         return [
             {
@@ -19,7 +22,7 @@ const nextConfig = {
                 ]
             }
         ]
-    }
+    },
 }
 
 module.exports = nextConfig
