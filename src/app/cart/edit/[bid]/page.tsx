@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image";
-import styles from '../page.module.css'
+import styles from '../../cart.module.css'
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/redux/store";
 import { useSearchParams } from "next/navigation"
@@ -17,9 +17,10 @@ import { BookingItem } from "../../../../../interfaces";
 import getBooking from "@/libs/getBooking";
 import getBookings from "@/libs/getBookings";
 import Link from "next/link";
+import deleteBooking from "@/libs/deleteBooking";
 
 
-export default  function MyBookingEditPage({params} : {params : {bid:string}}) {
+export default function MyBookingEditPage({params} : {params : {bid:string}}) {
 
 
     const { data: session } = useSession();
@@ -29,8 +30,7 @@ export default  function MyBookingEditPage({params} : {params : {bid:string}}) {
     const cid = urlParams.get('id')
     
     const campgroundItems = useAppSelector(state => state.campgroundSlice.campgroundItems)
-    const bookItems = useAppSelector(state => state.bookSlice.bookItems)
-
+    const bookingItems = useAppSelector(state => state.bookSlice.bookItems)
     
     const [campground , setCampground] = useState<string>(cid || '')
     const [checkInDate,setCheckInDate] = useState<Dayjs|null>(null)
@@ -90,6 +90,7 @@ export default  function MyBookingEditPage({params} : {params : {bid:string}}) {
             <Link href="/cart">
             <button name="Book Vaccine" className='text-cyan-800 text-xl font-sans border px-5 py-3 rounded-md hover:bg-cyan-950 hover:shadow-lg hover:shadow-white mt-5 hover:text-white' onClick={editBooking}>Edit Booking</button>   
             </Link>
+
             </div>
             </div>
 
