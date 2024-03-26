@@ -12,6 +12,7 @@ export default function InteractiveCard({children, contentName}:{children : Reac
             event.currentTarget.classList.add('shadow-lg')
         }
     }
+    
     return(
         <div className='w-full h-[300px] rounded-lg shadow-lg'
         onMouseOver={(e)=>onCardMouseAction(e)}

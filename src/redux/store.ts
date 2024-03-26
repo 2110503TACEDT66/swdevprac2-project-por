@@ -1,19 +1,15 @@
 import { configureStore,combineReducers } from "@reduxjs/toolkit";
-import cartSlice from "./features/cartSlice";
+import bookSlice from "./features/bookSlice";
 import { useSelector,TypedUseSelectorHook } from "react-redux";
 import {persistReducer} from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-
-const persistConfig={
-    key:'rootPersist',
-    storage
-}
-
-const rootReducer=combineReducers({cartSlice})
-const reduxPersistedReducer=persistReducer(persistConfig,rootReducer)
+import campgroundSlice from "./features/campgroundSlice";
 
 export const store= configureStore({
-    reducer:reduxPersistedReducer
+    reducer:{
+        bookSlice,
+        campgroundSlice
+    }
 })
 
 export type RootState = ReturnType<typeof store.getState>
