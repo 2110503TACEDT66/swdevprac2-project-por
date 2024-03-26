@@ -19,15 +19,19 @@ export default async function TopMenu(){
             {
                 session?<TopMenuItem title = 'YOUR BOOKING' pageRef='/cart'/>:''
             }
-            {
-                session ? null : <Link href="/api/auth/register"><div className='flex items-center absolute right-23 h-full px-3'>
+            {/* {
+                session ? null : <Link href="/api/auth/register"><div className='flex items-center right-3 flex-end h-full px-3'>
                 <button className={`${styles.button} py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-600 bg-stone-300 rounded-2xl hover:bg-stone-400 `}><p className='font-bold'>Sign-Up</p></button></div></Link>
-            }
+            } */}
             {
                 session? <Link href="/api/auth/signout"><div className='flex items-center absolute right-0 h-full px-3'>
-                <button className={`${styles.button} py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-600 bg-stone-300 rounded-2xl hover:bg-stone-400 `}><p className='font-bold'>Sign-out</p></button></div></Link>
-               :<Link href="/api/auth/signin"><div className='flex items-center absolute right-0 h-full px-3'>
-                <button className={`${styles.button} py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-600 bg-stone-300 rounded-2xl hover:bg-stone-400 `}><p className='font-bold'>Sign-in</p></button></div></Link>
+                <button className={`${styles.button} py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-600 bg-stone-300 rounded-2xl hover:bg-stone-400 `}><p className='font-bold'>Sign Out</p></button></div></Link>
+               :<div className='flex flex-row px-5 right-13'>
+               <Link href="/api/auth/signin"><div className='flex items-center absolute right-0 h-full px-3'>
+                <button className={`${styles.button} py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-600 bg-stone-300 rounded-2xl hover:bg-stone-400 `}><p className='font-bold'>Sign In</p></button></div></Link>
+                <Link href="/api/auth/register"><div className='flex items-center absolute right-12 h-full px-4 mx-14'>
+                <button className={`${styles.button} py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-600 bg-stone-300 rounded-2xl hover:bg-stone-400 `}><p className='font-bold'>Register</p></button></div></Link>
+                </div>
             }   
         </div>
     );

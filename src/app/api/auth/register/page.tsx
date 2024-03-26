@@ -1,4 +1,3 @@
-
 import { redirect } from "next/navigation"
 import register from "@/libs/userRegister"
 
