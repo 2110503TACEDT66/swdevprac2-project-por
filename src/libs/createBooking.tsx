@@ -8,7 +8,7 @@ export default async function createBooking(checkInDate : Date , checkOutDate : 
 
     const session = await getServerSession(authOptions);
 
-    const response = await fetch(`http://localhost:5100/api/v1/campgrounds/${campground}/bookings`, {
+    const response = await fetch(`${process.env.BACKEND_URL}/api/v1/campgrounds/${campground}/bookings`, {
         
         method: 'POST',
         headers: {

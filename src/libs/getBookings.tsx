@@ -7,7 +7,7 @@ export default async function getBookings() {
 
     const session = await getServerSession(authOptions);
 
-    const response = await fetch(`http://localhost:5100/api/v1/bookings`, {
+    const response = await fetch(`${process.env.BACKEND_URL}/api/v1/bookings`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
