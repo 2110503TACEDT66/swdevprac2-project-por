@@ -14,8 +14,8 @@ export default async function updateBooking(id:string, checkInDate : Date , chec
             authorization: `Bearer ${session?.user.token}`
         },
         body: JSON.stringify({
-            startDate: checkInDate,
-            endDate: checkOutDate,
+            checkInDate: checkInDate,
+            checkOutDate: checkOutDate,
             campground : campground ,
         })
     });
