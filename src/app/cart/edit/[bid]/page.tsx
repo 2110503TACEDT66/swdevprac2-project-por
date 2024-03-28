@@ -46,8 +46,8 @@ export default function MyBookingEditPage({params} : {params : {bid:string}}) {
             const checkInDateTime = checkInDate.toDate();
             const checkOutDateTime = checkOutDate.toDate();
             const id = params.bid
-    
-             updateBooking(id,checkInDateTime,checkOutDateTime , campground);
+
+            updateBooking(id,checkInDateTime,checkOutDateTime , campground);
             console.log("Edit Booking success");
             alert('Update Booking success')
 
