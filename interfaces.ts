@@ -10,7 +10,7 @@ export interface CampgroundItem {
 export interface CampgroundJson {
     success : boolean,
     count: number,
-    pagination: Object,
+    pagination?: any,
     data:CampgroundItem[]
 }
 
