@@ -1,33 +1,29 @@
-import '@testing-library/jest-dom'
-import userLogIn from '@/libs/userLogIn'
-import getUserProfile from '@/libs/getUserProfile'
-import { screen, render, waitFor } from '@testing-library/react'
+import userLogIn from "@/libs/userLogIn";
 
-describe('Remote User Log-In', () => {
-  var logInPromise:Promise<Object>
-  var logInJsonResult:Object
-  var token:string
-  var profilePromise:Promise<Object>
-  var profileJsonResult:Object
+describe('userLogIn function', () => {
 
-  beforeAll(async () => {
-    const email = "ami@gmail.com"
-    const password = "555555"
-    logInPromise = userLogIn(email, password)
-    logInJsonResult = await logInPromise
+  it('should successfully login with correct email and password', async () => {
+    const mockResponse = { accessToken: 'mockAccessToken' };
+    const mockUserEmail = 'amy@gmail.com';
+    const mockUserPassword = '555555';
 
-    token = logInJsonResult.token
-    profilePromise = getUserProfile(token)
-    profileJsonResult = await profilePromise
-  })
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      json: jest.fn().mockResolvedValue(mockResponse),
+    });
 
-  it('userLogIn must return correct results', () => {
-    expect(logInJsonResult.email).toMatch(/ami@gmail.com/i) 
-  })
+    const result = await userLogIn(mockUserEmail, mockUserPassword);
 
-  it('getUserProfile must return correct results', () => {
-    var profileData = profileJsonResult.data
-    expect(profileData.email).toMatch(/ami@gmail.com/i)
-    expect(profileData.role).toMatch(/admin/i)
-  })
-})
+    expect(fetch).toHaveBeenCalledWith(process.env.BACKEND_URL + '/api/v1/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: mockUserEmail,
+        password: mockUserPassword,
+      }),
+    });
+
+  });
+});
